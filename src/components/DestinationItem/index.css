@@ -1,0 +1,20 @@
+/* Write your CSS here */
+
+.list-item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+}
+
+.heading {
+  color: darkcyan;
+  font-family: 'Open Serif';
+  font-size: 10px;
+  font-weight: 500;
+}
