@@ -2,7 +2,7 @@ import DestinationSearch from './components/DestinationSearch'
 
 import './App.css'
 
-const destinationsList = [
+const initialDestinationsList = [
   {
     id: 1,
     name: 'Melaka Mosque',
@@ -69,6 +69,8 @@ const destinationsList = [
   },
 ]
 
-const App = () => <DestinationSearch destinationsList={destinationsList} />
+const App = () => (
+  <DestinationSearch destinationsList={initialDestinationsList} />
+)
 
 export default App

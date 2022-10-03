@@ -1,17 +1,18 @@
 // Write your code here
-import DestinationItem from './Components'
+import {Component} from 'react'
+
 import './index.css'
 
-const DestinationItem = props => {
-  const {placesDetails} = props
-  const {imgUrl, name, id} = placesDetails
+class DestinationItem extends Component {
+  render() {
+    const {destinationDetails} = this.props
+    const {imgUrl, name} = destinationDetails
+    return (
+      <li className="destination-item">
+        <img src={imgUrl} alt={name} className="destination-image" />
+        <p className="name">{name}</p>
+      </li>
+    )
+  }
 }
-
-return (
-  <li className="list-item-container">
-    <img src={imgUrl} alt={name} className="image" />
-    <h1 className="heading">{name}</h1>
-  </li>
-)
-
 export default DestinationItem
