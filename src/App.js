@@ -70,7 +70,7 @@ const initialDestinationsList = [
 ]
 
 const App = () => (
-  <DestinationSearch destinationsList={initialDestinationsList} />
+  <DestinationSearch initialDestinationsList={initialDestinationsList} />
 )
 
 export default App

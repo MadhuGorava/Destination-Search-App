@@ -1,54 +1,55 @@
 // Write your code here
-import {Component} from 'react'
-
-import DestinationItem from '../DestinationItem'
-
 import './index.css'
+import {Component} from 'react'
+import DestinationItem from '../DestinationItem'
 
 class DestinationSearch extends Component {
   state = {
-    searchInput: '',
+    inputSearch: '',
   }
 
-  onChangeSearchInput = event => {
-    this.setState({searchInput: event.target.value})
+  onChangeInputContent = event => {
+    this.setState({inputSearch: event.target.value})
   }
 
   render() {
-    const {searchInput} = this.state
+    const {inputSearch} = this.state
+    console.log(inputSearch)
     const {initialDestinationsList} = this.props
-    const searchResults = initialDestinationsList.filter(eachDestination =>
-      eachDestination.name.toLowerCase().includes(searchInput.toLowerCase()),
+    const searchResult = initialDestinationsList.filter(eachItem =>
+      eachItem.name.toLowerCase().includes(inputSearch.toLowerCase()),
     )
+
     return (
-      <div className="destinations-search-app-container">
-        <div className="destinations-search-container">
-          <h1 className="heading">Destination Search</h1>
+      <div className="app-container">
+        <div className="header-container">
+          <h1 className="destination-heading">Destination Search</h1>
           <div className="search-input-container">
             <input
               type="search"
-              className="search-input"
-              placeholder="Search"
-              value={searchInput}
-              onChange={this.onChangeSearchInput}
+              placeholder="search"
+              className="input-element"
+              value={inputSearch}
+              onChange={this.onChangeInputContent}
             />
             <img
-              src="https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png"
+              className="search-image"
               alt="search icon"
-              className="search-icon"
+              src="https://assets.ccbp.in/frontend/react-js/destinations-search-icon-img.png "
             />
           </div>
-          <ul className="destinations-list">
-            {searchResults.map(eachDestination => (
-              <DestinationItem
-                key={eachDestination.id}
-                destinationDetails={eachDestination}
-              />
-            ))}
-          </ul>
         </div>
+        <ul className="locations-container">
+          {searchResult.map(eachDestination => (
+            <DestinationItem
+              key={eachDestination.id}
+              destinationInfo={eachDestination}
+            />
+          ))}
+        </ul>
       </div>
     )
   }
 }
+
 export default DestinationSearch

@@ -1,76 +1,86 @@
-/* Write your CSS here */
-.destinations-search-app-container {
-  display: flex;
-  justify-content: center;
-}
-
-.destinations-search-container {
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  max-width: 1140px;
+  justify-content: center;
+  padding: 30px;
+  min-height: 100vh;
+  width: 100%;
 }
-
-@media screen and (min-width: 768px) {
-  .destinations-search-container {
-    align-items: flex-start;
-  }
-}
-
-.heading {
-  text-align: center;
-  color: #252627;
-  font-family: 'Roboto';
-  font-size: 40px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-left: 15px;
-  margin-bottom: 32px;
-}
-
-@media screen and (min-width: 768px) {
-  .heading {
-    margin-top: 96px;
-  }
-}
-
-.search-input-container {
+.header-container {
+  width: 90%;
   display: flex;
-  background-color: #f1f5f9;
-  border-radius: 8px;
-  padding-top: 8px;
-  padding-left: 16px;
-  padding-bottom: 8px;
-  padding-right: 16px;
-  margin-left: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.search-input {
-  color: #0f172a;
+.destination-heading {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Roboto';
+  color: #000000;
+  text-align: center;
+}
+@media screen and (max-width: 450px) {
+  .destination-heading {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .destination-heading {
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+.search-input-container {
+  width: 80%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #f1f5f9;
-  font-family: 'Open Sans';
-  font-size: 14px;
-  font-weight: 500;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  border-width: 0px;
+}
+.input-element {
+  width: 90%;
+  background-color: transparent;
+  border-width: 0px;
   border: none;
   outline: none;
+  padding: 4px 8px 4px 8px;
+  font-size: 15px;
 }
 
-.search-icon {
-  height: 20px;
+.search-image {
   width: 20px;
+  height: 20px;
 }
-
-.destinations-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding-left: 0px;
-  margin-top: 48px;
+.locations-container {
+  list-style: none;
+}
+@media screen and (max-width: 767px) {
+  .locations-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    /*padding: 20px 15px 30px 15px;*/
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .destinations-list {
-    justify-content: flex-start;
+  .locations-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
   }
 }
